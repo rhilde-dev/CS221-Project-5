@@ -31,45 +31,80 @@ Define tests for at least 21 change scenarios, in addition to the 3 given as exa
     listIterator(0) throws UnsupportedOperationException
     toString returns "[]"
 2) [] -> addToFront(A) -> [A]
+
+    - you want to know that you could call the method not if it worked or not
+    - No test has any impact on the next test
+    - Test(method called) ---> expected result
+    - copy/paste expected result tests ex. [] = []
+
     Tests:
-        addToFront(A) throws no Exception
-        addToRear(A) throws no Exception
+        addToFront(B) throws no Exception
+
+        addToRear(B) throws no Exception
+
+        addAfter(B, A) throws no Exception
         addAfter(A, B) throws NoSuchElementException
-        add(A) throws no Exception
-        add(-1, A) throws IndexOutOfBoundsException
-        add(0, A) throws no Exception
-        add(1, A) throws IndexOutOfBoundsException
-        removeFirst() throws NoSuchElementException
-        removeLast() throws NoSuchElementException
-        remove(A) throws NoSuchElementException
+
+        add(B) throws no Exception
+
+        add(-1, B) throws IndexOutOfBoundsException
+        add(0, B) throws no Exception
+        add(1, B) throws no Exception ----< = to size
+        add(2, B) throws IndexOutOfBoundsException ----< check this (index is greater than size but not = to)
+
+        removeFirst() returns A
+
+        removeLast() returns A 
+
+        remove(A) returns A
+        remove(B) throws NoSuchElementException
+
         remove(-1) throws IndexOutOfBoundsException
-        remove(0) throws IndexOutOfBoundsException
-        set(-1, A) throws IndexOutOfBoundsException
-        set(0, A) throws IndexOutOfBoundsException
+        remove(0) returns A
+        remove(1) throws IndexOutOfBoundsException
+
+        set(-1, B) throws IndexOutOfBoundsException
+        set(0, B) throws no Exception
+        set(1, B) throws IndexOutOfBoundsException 
+
         get(-1) throws IndexOutOfBoundsException
-        get(0) throws IndexOutOfBoundsException
-        indexOf(A) returns -1
-        first() throws NoSuchElementException
-        last() throws NoSuchElementException
-        contains(A) returns false
-        isEmpty() returns true
-        size() returns 0
-        iterator() returns an Iterator reference
-        listIterator() throws UnsupportedOperationException
-        listIterator(0) throws UnsupportedOperationException
-        toString returns "[]"
+        get(0) returns A (what does it return?)
+        get(1) throws IndexOutOfBoundsException
+
+        indexOf(A) returns 0
+        indexOf(B) returns -1
+
+        first() returns A
+
+        last() returns A
+
+        contains(A) returns true
+        contains(B) returns false
+
+        isEmpty() returns false
+
+        size() returns 1
+
+        iterator() returns an Iterator reference --- < Ask abt this
+
+        listIterator() throws UnsupportedOperationException --- < Ask abt this
+        listIterator(0) throws UnsupportedOperationException --- < Ask abt this
+
+        toString returns "[A]"
 3) [] -> addToRear(A) -> [A]
     Tests:
         addToFront(A) throws no Exception
         addToRear(A) throws no Exception
         addAfter(A, B) throws NoSuchElementException
+        addAfter(B, A) throws no Exception
         add(A) throws no Exception
         add(-1, A) throws IndexOutOfBoundsException
         add(0, A) throws no Exception
         add(1, A) throws IndexOutOfBoundsException
         removeFirst() throws NoSuchElementException
         removeLast() throws NoSuchElementException
-        remove(A) throws NoSuchElementException
+        remove(A) returns
+        remove(B) throws NoSuchElementException
         remove(-1) throws IndexOutOfBoundsException
         remove(0) throws IndexOutOfBoundsException
         set(-1, A) throws IndexOutOfBoundsException
