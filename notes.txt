@@ -1,0 +1,4 @@
+- you want to know that you could call the method not if it worked or not
+- No test has any impact on the next test
+- Test(method called) ---> expected result
+- copy/paste expected result tests ex. [] = []
